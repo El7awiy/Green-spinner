@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Spin — عجلة ستايل اخضر (بالنسب)</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="./pngimg.com - spinner_PNG46.png" type="image/png" sizes="16x16">
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <h1>Spin — عجلة ستايل اخضر 🎛️</h1>
+      <p class="subtitle">زود عناصر، اضبط **النسب** لكل عنصر، واضغط دوّر — العجلة هتتصرف 3D جامد.</p>
+    </header>
+
+    <section class="wheel-area">
+      <div class="wheel-3d">
+        <div class="wheel-frame">
+          <canvas id="wheelCanvas" aria-label="عجلة القرارات"></canvas>
+        </div>
+        <div class="pointer">▼</div>
+      </div>
+
+      <aside class="controls">
+        <div class="theme-badge">ستايل: بن-تن — أخضر 3D</div>
+
+        <div class="add-item">
+          <input id="itemInput" placeholder="اكتب عنصر (مثال: مشاهدة فيلم)" />
+          <input id="weightInput" placeholder="نسبة (مثال: 10)" type="number" min="1" />
+          <button id="addBtn" class="btn primary">إضافة</button>
+        </div>
+
+        <ul id="itemsList" class="items-list" aria-live="polite"></ul>
+
+        <div class="actions">
+          <button id="spinBtn" class="btn spin">دوّر العجلة!</button>
+          <button id="quickPickBtn" class="btn">اختيار سريع</button>
+          <button id="clearBtn" class="btn ghost">مسح الكل</button>
+        </div>
+
+        <div class="legend">
+          <strong>ملاحظات:</strong>
+          <ul>
+            <li>النسب تحدد الاحتمالية — كل ما زادت النسبة، زاد احتمال الوقوع عليها.</li>
+            <li>يمكن سحب العناصر لإعادة الترتيب (مستقبلاً) — حالياً استخدم أزرار ↑ ↓.</li>
+          </ul>
+        </div>
+
+      </aside>
+    </section>
+
+    <footer class="footer">
+      <small>مصمّم 3D — ألوان ستايل اخضر، تأثر بالفضاء واللمعان.</small>
+      <div class="credits"><strong>أنت</strong> — نسخة قابلة للتعديل.</div>
+    </footer>
+  </main>
+
+  <!-- Modal نتيجة -->
+  <div id="resultModal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <h2>النتيجة</h2>
+      <div id="resultText" class="result-text"></div>
+      <div class="modal-actions">
+        <button id="closeModal" class="btn primary">تمام</button>
+        <button id="spinAgain" class="btn">دوّر تاني</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
